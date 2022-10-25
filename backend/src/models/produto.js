@@ -8,29 +8,29 @@ class Produto extends sequelize.Model{}
 Produto.init(
     {
         id: {
-            type: Sequelize.INTEGER,
+            type: sequelize.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
         nome: {
-            type: Sequelize.STRING,
+            type: sequelize.STRING,
             allowNull: false
         },
         funcionario: {
-            type: Sequelize.STRING,
+            type: sequelize.STRING,
             allowNull: true
         },
         observacoes: {
-            type: Sequelize.STRING,
+            type: sequelize.STRING,
             allowNull: true
         },
         codigo: {
-            type: Sequelize.STRING,
+            type: sequelize.STRING,
             allowNull: true
         },
         images: {
-            type: Sequelize.BLOB,
+            type: sequelize.BLOB,
             allowNull: true
         }
     },
