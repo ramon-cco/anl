@@ -32,7 +32,7 @@ module.exports =
         }
     },
 
-    async Update(req,res)
+    async Update(req,res,next)
     {
         try {
             const prod = await ModelProduto.findByPk(req.body.id);
@@ -43,11 +43,15 @@ module.exports =
                 prod.codigo = req.body.codigo;
                 prod.images = req.body.images;
 
-                await prod.save
+                await prod.save();
             }
             return res.json(prod)
-        } catch (erro) {
-            return console.error("Erro na Update: ", erro)
+        } catch (err) {
+            // const error = new Error(err)
+            // error.httpStatusCode = 500;
+            // return next(error)
+             res.sendstatus(500)
+            // return console.error("Erro na Update: ", erro)
         }
     },
 
@@ -71,6 +75,4 @@ module.exports =
             return console.error("Erro na Delete: ", erro)
         }
     },
-
-
 }

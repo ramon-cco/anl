@@ -35,7 +35,7 @@ Produto.init(
         }
     },
     {
-        sequelize : database, modelName : tbProduto, shema
+        sequelize : database, modelName : 'produto', shema
     }
 )
 
